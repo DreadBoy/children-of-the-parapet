@@ -9,3 +9,5 @@
 :models
 
 [name:;collection:Mech;type:head_classic;position:(0.0000, 0.0000, 0.0000);rotation:(0.0000, 90.0000, 0.0000);scale:(1.0000, 1.0000, 1.0000);group:;locked:False;hidden:False;materials:metalOrange+dark+_defaultMat;]
+[name:;collection:Mech;type:foot_thin;position:(0.0000, 0.0000, 0.2200);rotation:(0.0000, 90.0000, 0.0000);scale:(0.3000, 0.3000, 0.3000);group:;locked:False;hidden:False;materials:metalOrange+dark+_defaultMat;]
+[name:;collection:Mech;type:foot_thin;position:(0.0000, 0.0000, -0.2200);rotation:(0.0000, 90.0000, 0.0000);scale:(0.3000, 0.3000, 0.3000);group:;locked:False;hidden:False;materials:metalOrange+dark+_defaultMat;]
