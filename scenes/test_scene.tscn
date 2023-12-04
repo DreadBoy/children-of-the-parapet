@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=12 format=3 uid="uid://bjx5wdxhqeuo3"]
 
 [ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_0x6iv"]
 [ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="2_p36t4"]
+[ext_resource type="PackedScene" uid="uid://bj3xcmibrysj" path="res://boss-1/boss-1.tscn" id="3_knmy5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -62,16 +63,21 @@ shape = SubResource("BoxShape3D_ymwox")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 shape = SubResource("BoxShape3D_mpbq2")
+disabled = true
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_2uaa8")
-
-[node name="character" parent="." instance=ExtResource("2_0x6iv")]
-speed = 5
+disabled = true
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011, -1, 3.44451e-08, -2.69114e-08, 1.57566, 2, 0)
+transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011, -1, 3.4445e-08, -2.69114e-08, 2.97196, 3.78718, -6.10342e-08)
 size = 5.0
+
+[node name="character" parent="." instance=ExtResource("2_0x6iv")]
+
+[node name="boss-1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_knmy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+player = NodePath("../character")

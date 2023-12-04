@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj3xcmibrysj"]
+
+[ext_resource type="PackedScene" uid="uid://sjgwdfki5mkk" path="res://boss-1/boss-1-animated.tscn" id="1_p3wxu"]
+[ext_resource type="Script" path="res://boss-1/boss-1.gd" id="2_x6cpu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_25s40"]
+height = 1.2
+radius = 0.45
+
+[node name="boss-1" type="CharacterBody3D"]
+script = ExtResource("2_x6cpu")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="boss-1" parent="Pivot" instance=ExtResource("1_p3wxu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CylinderShape3D_25s40")

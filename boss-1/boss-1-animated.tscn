@@ -1,0 +1,272 @@
+[gd_scene load_steps=18 format=3 uid="uid://sjgwdfki5mkk"]
+
+[ext_resource type="PackedScene" uid="uid://djy72h0pdkkau" path="res://boss-1/boss-1.glb" id="1_6h4u2"]
+
+[sub_resource type="Animation" id="Animation_xyfr1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor_detailed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.11759e-08, 0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor_detailed:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("meteor3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.19209e-07, 0.65, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("meteor4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.45, 0.4, -0.07)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("meteor5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.55, 0.5, -0.07)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("boss-1-club:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.535941, 0.60606, -0.0586393)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("boss-1-club:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.785398, -1.35712e-07, -2.49761e-07)]
+}
+
+[sub_resource type="Animation" id="Animation_kns51"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor_detailed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.11759e-08, 0.05, 0), Vector3(0, 0.03, 0), Vector3(1.11759e-08, 0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.19209e-07, 0.65, 0), Vector3(0, 0.63, 0), Vector3(1.19209e-07, 0.65, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("meteor4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.45, 0.4, -0.07), Vector3(-0.45, 0.38, -0.07), Vector3(-0.45, 0.4, -0.07)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("meteor5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.55, 0.5, -0.07), Vector3(0.55, 0.48, -0.07), Vector3(0.55, 0.5, -0.07)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("boss-1-club:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.535941, 0.60606, -0.0586393), Vector3(0.536, 0.586, -0.059), Vector3(0.535941, 0.60606, -0.0586393)]
+}
+
+[sub_resource type="Animation" id="Animation_08s4i"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor_detailed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.11759e-08, 0.05, 0), Vector3(1.11759e-08, 0.0228508, -0.153073), Vector3(1.11759e-08, 0.00953495, -0.063252), Vector3(1.11759e-08, -0.00534118, 0), Vector3(1.11759e-08, 0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor_detailed:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.261799, 0, 0), Vector3(-0.0841772, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x1e3t"]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boss-1-club:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.785398, -1.35712e-07, -2.49761e-07), Vector3(1.5708, 0, 0), Vector3(-2.26893, 0, 0), Vector3(0.785398, -1.35712e-07, -2.49761e-07)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqjba"]
+_data = {
+"RESET": SubResource("Animation_xyfr1"),
+"attack": SubResource("Animation_x1e3t"),
+"idle": SubResource("Animation_kns51"),
+"walk": SubResource("Animation_08s4i")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4hvee"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e5fif"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lwyau"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0cmf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t6f0u"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a3j61"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2auy1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j7v08"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wy38f"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r7at4"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8qu8q"]
+states/attack/node = SubResource("AnimationNodeAnimation_4hvee")
+states/attack/position = Vector2(618, 58)
+states/idle/node = SubResource("AnimationNodeAnimation_e5fif")
+states/idle/position = Vector2(381, 80)
+states/walk/node = SubResource("AnimationNodeAnimation_lwyau")
+states/walk/position = Vector2(381, 223)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_p0cmf"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_t6f0u"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_a3j61"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_2auy1"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_j7v08"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_wy38f"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_r7at4")]
+graph_offset = Vector2(-160, -38)
+
+[node name="boss-1" instance=ExtResource("1_6h4u2")]
+
+[node name="meteor_detailed" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11759e-08, 0.05, 0)
+
+[node name="meteor3" parent="." index="3"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.19209e-07, 0.65, 0)
+
+[node name="meteor4" parent="." index="4"]
+transform = Transform3D(0.311769, -0.1125, 0, 0.18, 0.194856, 0, 0, 0, 0.225, -0.45, 0.4, -0.07)
+
+[node name="meteor5" parent="." index="5"]
+transform = Transform3D(0.311769, -0.1125, 0, 0.18, 0.194856, 0, 0, 0, 0.225, 0.55, 0.5, -0.07)
+
+[node name="boss-1-club" parent="." index="6"]
+transform = Transform3D(1, 1.53798e-07, -9.59628e-08, -1.76607e-07, 0.707107, -0.707107, -4.08954e-08, 0.707107, 0.707107, 0.535941, 0.60606, -0.0586393)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_aqjba")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="8"]
+tree_root = SubResource("AnimationNodeStateMachine_8qu8q")
+anim_player = NodePath("../AnimationPlayer")
+active = true
