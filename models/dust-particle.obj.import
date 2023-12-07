@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqhk3hqljlkxe"
+path="res://.godot/imported/dust-particle.obj-ba2ac0a493d6f8452cb577fff1d87427.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dust-particle.obj-ba2ac0a493d6f8452cb577fff1d87427.mesh"]
+
+source_file="res://models/dust-particle.obj"
+dest_files=["res://.godot/imported/dust-particle.obj-ba2ac0a493d6f8452cb577fff1d87427.mesh", "res://.godot/imported/dust-particle.obj-ba2ac0a493d6f8452cb577fff1d87427.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

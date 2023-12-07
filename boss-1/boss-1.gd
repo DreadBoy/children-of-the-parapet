@@ -8,9 +8,11 @@ extends CharacterBody3D
 @export var player: Node3D
 
 @onready var state_machine = $Pivot/"boss-1"/AnimationTree["parameters/playback"]
+@onready var club_area: Area3D = $Pivot/"boss-1"/"club-area"
 
 func _ready():
 	state_machine.travel("idle")
+	club_area.body_entered.connect(_on_player_hit)
 
 func _physics_process(delta):
 	
@@ -32,9 +34,13 @@ func _physics_process(delta):
 		state_machine.travel("attack")
 
 func _should_move_closer():
-	var range = player.transform.origin.distance_to(transform.origin)
+	var _range = player.transform.origin.distance_to(transform.origin)
 	var angle = (-transform.basis.z).angle_to(player.transform.origin - transform.origin)
-	return range > attack_range or  angle >  deg_to_rad(attack_angle)
+	return _range > attack_range or  angle >  deg_to_rad(attack_angle)
 
 func _look_after_player(delta):
 	transform = transform.interpolate_with(transform.looking_at(player.transform.origin, Vector3.UP), delta * turn_speed)
+
+func _on_player_hit(body: Node3D):
+	print(body)
+	pass

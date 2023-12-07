@@ -9,7 +9,7 @@ var target_velocity = Vector3.ZERO
 func _ready():
 	state_machine.travel("idle")
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector3.ZERO
 
 	if Input.is_action_pressed("move_right"):

@@ -26,6 +26,9 @@
 	- [ ] enter arena
 - [ ] Arena
 	- [ ] fight
+	- [ ] boss health bar
+	- [ ] game over screen in case of hit (one-hit death)
+	- [ ] game over screen in case of success
 	- [ ] end screen with link to survey
 - [ ] online survey
 - [ ] main menu
