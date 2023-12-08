@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=11 format=3 uid="uid://bjx5wdxhqeuo3"]
 
 [ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_0x6iv"]
 [ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="2_p36t4"]
-[ext_resource type="PackedScene" uid="uid://bj3xcmibrysj" path="res://boss-1/boss-1.tscn" id="3_knmy5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -78,7 +77,4 @@ transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011
 size = 5.0
 
 [node name="character" parent="." instance=ExtResource("2_0x6iv")]
-
-[node name="boss-1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_knmy5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
-player = NodePath("../character")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00484991, -4.76837e-07, -3.00508)

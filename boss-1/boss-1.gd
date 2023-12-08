@@ -8,11 +8,10 @@ extends CharacterBody3D
 @export var player: Node3D
 
 @onready var state_machine = $Pivot/"boss-1"/AnimationTree["parameters/playback"]
-@onready var club_area: Area3D = $Pivot/"boss-1"/"club-area"
 
 func _ready():
 	state_machine.travel("idle")
-	club_area.body_entered.connect(_on_player_hit)
+	$Pivot/"boss-1"/"club-area".body_entered.connect(_on_player_hit)
 
 func _physics_process(delta):
 	
