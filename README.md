@@ -7,7 +7,7 @@
 	- [x] controller (move + attack)
 		- [ ] dash
 	- [x] animation
-		- [ ] dash + hit animation
+		- [x] dash + hit animation
 - [ ] Boss
 	- [x] concept / attack gimmick
 		- huge club, slow attack
