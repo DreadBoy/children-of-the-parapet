@@ -61,5 +61,6 @@ func _on_enemy_hit(_body: Node3D):
 
 func _on_scene_hit(_body: Node3D):
 	if state_machine.get_current_node() == "dash":
+		print("scene hit")
 		state_machine.travel("knockback")
 

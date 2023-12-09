@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=13 format=3 uid="uid://bjx5wdxhqeuo3"]
 
 [ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_0x6iv"]
 [ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="2_p36t4"]
+[ext_resource type="PackedScene" uid="uid://n1dsaskndkou" path="res://gate/gate.tscn" id="2_s2oed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -45,35 +46,37 @@ environment = SubResource("Environment_pjy1w")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="terrain" type="StaticBody3D" parent="."]
 collision_mask = 0
 
-[node name="terrain" parent="StaticBody3D" instance=ExtResource("2_p36t4")]
+[node name="terrain" parent="terrain" instance=ExtResource("2_p36t4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="ground" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="ground" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.5, -0.5)
 shape = SubResource("BoxShape3D_mtdnx")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 4)
 shape = SubResource("BoxShape3D_wgklm")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 shape = SubResource("BoxShape3D_mpbq2")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_2uaa8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -5)
 shape = SubResource("BoxShape3D_cjuat")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
 shape = SubResource("BoxShape3D_mb6uk")
+
+[node name="gate" parent="." instance=ExtResource("2_s2oed")]
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 
