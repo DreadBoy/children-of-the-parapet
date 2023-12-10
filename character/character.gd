@@ -21,9 +21,6 @@ func _physics_process(_delta):
 		velocity = $Pivot.global_transform.basis.z * speed / 2
 		move_and_slide()
 	elif state == "walk" or state == "idle":
-		if Input.is_action_pressed("dash"):
-			state_machine.travel("dash")
-			return
 			
 		var direction = Vector3.ZERO
 
@@ -48,7 +45,9 @@ func _physics_process(_delta):
 			$Pivot.look_at(position + direction, Vector3.UP)
 		move_and_slide()
 
-		if direction != Vector3.ZERO and state != "walk":
+		if Input.is_action_pressed("dash"):
+			state_machine.travel("dash")
+		elif direction != Vector3.ZERO and state != "walk":
 			state_machine.travel("walk")
 		elif direction == Vector3.ZERO and state != "idle":
 			state_machine.travel("idle")
