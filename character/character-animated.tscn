@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcmyqmfil7rd7"]
+[gd_scene load_steps=23 format=3 uid="uid://dcmyqmfil7rd7"]
 
 [ext_resource type="PackedScene" uid="uid://kpdk8lv1a1xl" path="res://character/character.glb" id="1_w6244"]
 
@@ -91,7 +91,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("scene-area:monitoring")
+tracks/7/path = NodePath("attack-area:monitorable")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -250,7 +250,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("scene-area:monitoring")
+tracks/5/path = NodePath("attack-area:monitorable")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -373,14 +373,10 @@ graph_offset = Vector2(-412, -54)
 height = 0.3
 radius = 0.3
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_75pqx"]
-height = 0.3
-radius = 0.3
-
 [node name="character" instance=ExtResource("1_w6244")]
 
 [node name="head_classic" parent="." index="0"]
-transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 2.23517e-08, 0.1, 0)
+transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 2.1467e-08, 0.0988126, 0)
 
 [node name="foot_thin" parent="." index="1"]
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, 0.03, 0, 0.13)
@@ -389,13 +385,13 @@ transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, -0.03, 0, -0.13)
 
 [node name="foot_topShield" parent="." index="3"]
-transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 8.9407e-08, 0.4, 0)
+transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 8.58681e-08, 0.398813, 0)
 
 [node name="foot_double" parent="." index="4"]
-transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 2.98023e-08, 0.16, 0.18)
+transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 2.07048e-08, 0.150842, 0.18)
 
 [node name="foot_double2" parent="." index="5"]
-transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 2.98023e-08, 0.16, -0.18)
+transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 2.07048e-08, 0.150842, -0.18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 autoplay = "idle"
@@ -409,18 +405,11 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 
 [node name="attack-area" type="Area3D" parent="." index="8"]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 8
+collision_mask = 5
 monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attack-area" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CylinderShape3D_n8it7")
-
-[node name="scene-area" type="Area3D" parent="." index="9"]
-collision_layer = 0
-monitoring = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scene-area" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-shape = SubResource("CylinderShape3D_75pqx")

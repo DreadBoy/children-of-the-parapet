@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=14 format=3 uid="uid://bjx5wdxhqeuo3"]
 
 [ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_0x6iv"]
 [ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="2_p36t4"]
 [ext_resource type="PackedScene" uid="uid://n1dsaskndkou" path="res://gate/gate.tscn" id="2_s2oed"]
+[ext_resource type="Script" path="res://camera/camera.gd" id="3_46bpt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -79,9 +80,11 @@ shape = SubResource("BoxShape3D_mb6uk")
 [node name="gate" parent="." instance=ExtResource("2_s2oed")]
 
 [node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+script = ExtResource("3_46bpt")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011, -1, 3.4445e-08, -2.69114e-08, 2.97196, 3.78718, -6.10342e-08)
+transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011, -1, 3.4445e-08, -2.69114e-08, 2.84837, 4.04888, -0.274703)
 size = 5.0
 
 [node name="character" parent="." instance=ExtResource("2_0x6iv")]
