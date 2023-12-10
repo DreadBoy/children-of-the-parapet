@@ -5,7 +5,7 @@
 - [x] Player character
 	- [x] model
 	- [x] controller (move + attack)
-		- [ ] dash
+		- [x] dash
 	- [x] animation
 		- [x] dash + hit animation
 - [ ] Boss
@@ -19,10 +19,10 @@
 		- [x] club attack
 		- [ ] spin attack
 - [ ] Simple level
-	- [ ] teach movement
+	- [x] teach movement
 	- [ ] teach powers/pickups
-	- [ ] teach dash (can be done by destroying barrier / gate)
-	- [ ] implement camera movement
+	- [x] teach dash (can be done by destroying barrier / gate)
+	- [x] implement camera movement
 	- [ ] enter arena
 - [ ] Arena
 	- [ ] fight
@@ -30,6 +30,10 @@
 	- [ ] game over screen in case of hit (one-hit death)
 	- [ ] game over screen in case of success
 	- [ ] end screen with link to survey
+	
+- [ ] Improvements
+	- [ ] Screen shake in dash hit
+	- [ ] Sound effects
 - [ ] online survey
 - [ ] main menu
 	- [ ] with warning about survey at the end
