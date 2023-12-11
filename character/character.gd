@@ -52,8 +52,8 @@ func _physics_process(_delta):
 		elif direction == Vector3.ZERO and state != "idle":
 			state_machine.travel("idle")
 
-func _on_hit(_body: Node3D):
+func _on_hit(body: Node3D):
 	if state_machine.get_current_node() == "dash":
-		print("hit")
+		print("hit %s while dashing" % body)
 		state_machine.travel("knockback")
 

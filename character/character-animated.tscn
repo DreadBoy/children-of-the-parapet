@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dcmyqmfil7rd7"]
+[gd_scene load_steps=24 format=3 uid="uid://dcmyqmfil7rd7"]
 
 [ext_resource type="PackedScene" uid="uid://kpdk8lv1a1xl" path="res://character/character.glb" id="1_w6244"]
 
@@ -242,7 +242,7 @@ tracks/4/path = NodePath("attack-area:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.48),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -254,7 +254,7 @@ tracks/5/path = NodePath("attack-area:monitorable")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.48),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -345,6 +345,9 @@ _data = {
 "walk": SubResource("Animation_o5i8h")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7r12a"]
+animation = &"RESET"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1mbbu"]
 animation = &"dash"
 
@@ -357,14 +360,9 @@ animation = &"knockback"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_637qs"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6ua0"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4egf3"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tnksg"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w22a6"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0hrk4"]
 
@@ -380,8 +378,16 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lcgb3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6r5a3"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jig7s"]
-states/Start/position = Vector2(326, 257)
+states/RESET/node = SubResource("AnimationNodeAnimation_7r12a")
+states/RESET/position = Vector2(235, 105)
+states/Start/position = Vector2(59, 105)
 states/dash/node = SubResource("AnimationNodeAnimation_1mbbu")
 states/dash/position = Vector2(712, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_h3qc8")
@@ -390,12 +396,12 @@ states/knockback/node = SubResource("AnimationNodeAnimation_53uct")
 states/knockback/position = Vector2(568, -29)
 states/walk/node = SubResource("AnimationNodeAnimation_637qs")
 states/walk/position = Vector2(568, 257)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_q6ua0"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_4egf3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_tnksg"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_w22a6"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_0hrk4"), "walk", "dash", SubResource("AnimationNodeStateMachineTransition_vuaoh"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_fn5yr"), "dash", "knockback", SubResource("AnimationNodeStateMachineTransition_i06ym"), "knockback", "idle", SubResource("AnimationNodeStateMachineTransition_h1tq4")]
-graph_offset = Vector2(-412, -54)
+transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_4egf3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_tnksg"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_0hrk4"), "walk", "dash", SubResource("AnimationNodeStateMachineTransition_vuaoh"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_fn5yr"), "dash", "knockback", SubResource("AnimationNodeStateMachineTransition_i06ym"), "knockback", "idle", SubResource("AnimationNodeStateMachineTransition_h1tq4"), "Start", "RESET", SubResource("AnimationNodeStateMachineTransition_lcgb3"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_6r5a3")]
+graph_offset = Vector2(-336, -69)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n8it7"]
 height = 0.3
-radius = 0.3
+radius = 0.26
 
 [node name="character" instance=ExtResource("1_w6244")]
 

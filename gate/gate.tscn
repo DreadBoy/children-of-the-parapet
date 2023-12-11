@@ -89,7 +89,7 @@ tracks/2/path = NodePath("../StaticBody3D/CollisionShape3D6:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -113,23 +113,24 @@ _data = {
 "break": SubResource("Animation_lywld")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h6us7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ayn6j"]
 animation = &"RESET"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jwdcg"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s28vd"]
 animation = &"break"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_knucl"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jxx5y"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_od2xb"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cor20"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_can4d"]
-states/RESET/node = SubResource("AnimationNodeAnimation_h6us7")
-states/RESET/position = Vector2(324, 95)
-states/break/node = SubResource("AnimationNodeAnimation_jwdcg")
-states/break/position = Vector2(451, 69)
-transitions = ["RESET", "break", SubResource("AnimationNodeStateMachineTransition_knucl"), "Start", "RESET", SubResource("AnimationNodeStateMachineTransition_jxx5y")]
+states/RESET/node = SubResource("AnimationNodeAnimation_ayn6j")
+states/RESET/position = Vector2(330, 100)
+states/Start/position = Vector2(186, 100)
+states/break/node = SubResource("AnimationNodeAnimation_s28vd")
+states/break/position = Vector2(516, 107)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_od2xb"), "RESET", "break", SubResource("AnimationNodeStateMachineTransition_cor20")]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7o82e"]
 size = Vector3(0.15, 1, 1)
@@ -163,10 +164,10 @@ shape = SubResource("BoxShape3D_7o82e")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 10
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 shape = SubResource("BoxShape3D_mitbc")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_player_enter"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_player_enter"]
