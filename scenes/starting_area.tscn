@@ -1,24 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=31 format=3 uid="uid://pey1pbm2g3n2"]
 
-[ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_0x6iv"]
-[ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="2_p36t4"]
-[ext_resource type="PackedScene" uid="uid://n1dsaskndkou" path="res://gate/gate.tscn" id="2_s2oed"]
-[ext_resource type="Script" path="res://camera/camera.gd" id="3_46bpt"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
-sky_top_color = Color(1, 1, 1, 1)
-sky_horizon_color = Color(0.851475, 0.851902, 0.8525, 1)
-ground_bottom_color = Color(0.4059, 0.407608, 0.41, 1)
-ground_horizon_color = Color(0.851475, 0.851902, 0.8525, 1)
-
-[sub_resource type="Sky" id="Sky_lwsdv"]
-sky_material = SubResource("ProceduralSkyMaterial_uupyu")
-
-[sub_resource type="Environment" id="Environment_pjy1w"]
-background_mode = 2
-sky = SubResource("Sky_lwsdv")
-ssao_enabled = true
-glow_enabled = true
+[ext_resource type="Script" path="res://scenes/starting_area.gd" id="1_8ojts"]
+[ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="1_ot43q"]
+[ext_resource type="PackedScene" uid="uid://n1dsaskndkou" path="res://gate/gate.tscn" id="2_alib5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtdnx"]
 size = Vector3(100, 1, 100)
@@ -100,19 +84,16 @@ size = Vector3(3, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jun1y"]
 size = Vector3(0.4, 1, 1)
 
-[node name="Main" type="Node"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhyr6"]
+size = Vector3(0.4, 1, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_pjy1w")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
+[node name="starting-area" type="Node"]
+script = ExtResource("1_8ojts")
 
 [node name="terrain" type="StaticBody3D" parent="."]
 collision_mask = 0
 
-[node name="terrain" parent="terrain" instance=ExtResource("2_p36t4")]
+[node name="terrain" parent="terrain" instance=ExtResource("1_ot43q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="ground" type="CollisionShape3D" parent="terrain"]
@@ -223,18 +204,7 @@ shape = SubResource("BoxShape3D_jun1y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -2)
 shape = SubResource("BoxShape3D_jun1y")
 
-[node name="gate" parent="." instance=ExtResource("2_s2oed")]
-
-[node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12349, -4.76837e-07, -3.97631)
-script = ExtResource("3_46bpt")
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(-4.37114e-08, -0.788011, 0.615662, 0, 0.615662, 0.788011, -1, 3.4445e-08, -2.69114e-08, 2.84837, 4.04888, -0.274703)
-size = 5.0
-
-[node name="character" parent="." instance=ExtResource("2_0x6iv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.12349, -4.76837e-07, -3.97631)
+[node name="gate" parent="." instance=ExtResource("2_alib5")]
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, -0.866025, 0.5, 0, 0.5, 0.866025, -1, 3.78552e-08, -2.18557e-08, 0.587995, 0.291235, -0.743865)
@@ -245,3 +215,13 @@ font_size = 46
 transform = Transform3D(-4.37114e-08, -0.866025, 0.5, 0, 0.5, 0.866025, -1, 3.78552e-08, -2.18557e-08, 6.21827, 0.291235, -4.20258)
 text = "<wasd> to move"
 font_size = 64
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -1)
+shape = SubResource("BoxShape3D_mhyr6")
+
+[connection signal="body_entered" from="Area3D" to="." method="on_doorway_entered"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Children-of-the-parapet"
-run/main_scene="res://scenes/test_scene.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/global.gd"
 
 [input]
 
