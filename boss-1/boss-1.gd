@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var speed = 1
-@export var turn_speed = 3
+@export var turn_speed = 2.5
 @export var attack_range = 1
 @export var attack_angle = 30
 
