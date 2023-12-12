@@ -2,5 +2,5 @@ extends Marker3D
 
 @onready var player = Global.player;
 
-func _process(delta):
+func _process(_delta):
 	position = player.position
