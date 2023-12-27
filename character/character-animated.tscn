@@ -101,88 +101,6 @@ tracks/7/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_kcgvh"]
-resource_name = "idle"
-length = 4.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head_classic:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(2.23517e-08, 0.1, 0), Vector3(0, 0.07, 0), Vector3(2.23517e-08, 0.1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("foot_topShield:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(8.9407e-08, 0.4, 0), Vector3(0, 0.37, 0), Vector3(8.9407e-08, 0.4, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("foot_double:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 2.5, 4.5),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(2.98023e-08, 0.16, 0.18), Vector3(0, 0.13, 0.18), Vector3(2.98023e-08, 0.16, 0.18)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("foot_double2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 2.5, 4.5),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(2.98023e-08, 0.16, -0.18), Vector3(0, 0.13, -0.18), Vector3(2.98023e-08, 0.16, -0.18)]
-}
-
-[sub_resource type="Animation" id="Animation_o5i8h"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("foot_thin:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.03, 0, 0.13), Vector3(-0.07, 0, 0.13), Vector3(0.02, 0.015, 0.13), Vector3(0.03, 0, 0.13)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("foot_thin2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.03, 0, -0.13), Vector3(0.02, 0.015, -0.13), Vector3(0.03, 0, -0.13), Vector3(-0.03, 0, -0.13)]
-}
-
 [sub_resource type="Animation" id="Animation_callt"]
 resource_name = "dash"
 length = 0.5
@@ -260,6 +178,59 @@ tracks/5/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_kcgvh"]
+resource_name = "idle"
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head_classic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(2.23517e-08, 0.1, 0), Vector3(0, 0.07, 0), Vector3(2.23517e-08, 0.1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foot_topShield:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(8.9407e-08, 0.4, 0), Vector3(0, 0.37, 0), Vector3(8.9407e-08, 0.4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foot_double:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 2.5, 4.5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(2.98023e-08, 0.16, 0.18), Vector3(0, 0.13, 0.18), Vector3(2.98023e-08, 0.16, 0.18)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("foot_double2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 2.5, 4.5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(2.98023e-08, 0.16, -0.18), Vector3(0, 0.13, -0.18), Vector3(2.98023e-08, 0.16, -0.18)]
+}
+
 [sub_resource type="Animation" id="Animation_a43u0"]
 resource_name = "knockback"
 length = 0.4
@@ -334,6 +305,35 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o5i8h"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foot_thin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.03, 0, 0.13), Vector3(-0.07, 0, 0.13), Vector3(0.02, 0.015, 0.13), Vector3(0.03, 0, 0.13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foot_thin2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.03, 0, -0.13), Vector3(0.02, 0.015, -0.13), Vector3(0.03, 0, -0.13), Vector3(-0.03, 0, -0.13)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k0iuj"]
@@ -436,10 +436,17 @@ active = true
 
 [node name="attack-area" type="Area3D" parent="." index="8"]
 collision_layer = 8
-collision_mask = 5
+collision_mask = 4
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attack-area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_n8it7")
+
+[node name="scene-area" type="Area3D" parent="." index="9"]
+collision_layer = 8
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="scene-area" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CylinderShape3D_n8it7")

@@ -44,6 +44,6 @@ func _look_after_player(delta):
 		delta * turn_speed
 	)
 
-func _on_player_hit(body: Node3D):
-	print(body)
+func _on_player_hit(_body: Node3D):
+	Global.OnGameLoss.emit()
 	pass

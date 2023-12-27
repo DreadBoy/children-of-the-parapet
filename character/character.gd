@@ -9,7 +9,8 @@ var target_velocity = Vector3.ZERO
 
 func _ready():
 	state_machine.travel("idle")
-	$Pivot/"character"/"attack-area".body_entered.connect(_on_hit)
+	$Pivot/"character"/"attack-area".body_entered.connect(_on_attack)
+	$Pivot/"character"/"scene-area".body_entered.connect(_on_scene_hit)
 	
 func _physics_process(_delta):
 	var state = state_machine.get_current_node()
@@ -52,8 +53,14 @@ func _physics_process(_delta):
 		elif direction == Vector3.ZERO and state != "idle":
 			state_machine.travel("idle")
 
-func _on_hit(body: Node3D):
+func _on_attack(body: Node3D):
 	if state_machine.get_current_node() == "dash":
-		print("hit %s while dashing" % body)
+		print("attacked %s while dashing" % body)
+		Global.OnBossDamage.emit()
+		state_machine.travel("knockback")
+
+func _on_scene_hit(body: Node3D):
+	if state_machine.get_current_node() == "dash":
+		print("hit wall %s while dashing" % body)
 		state_machine.travel("knockback")
 
