@@ -7,6 +7,9 @@ func _ready():
 	Global.OnBossDamage.connect(_on_boss_damage)
 	await get_tree().create_timer(0).timeout
 	_update_ui()
+	
+func _exit_tree():
+	Global.player.visible = false
 
 func _process(delta):
 	pass
@@ -15,7 +18,7 @@ func _on_boss_damage():
 	boss_health = boss_health - 1
 	_update_ui()
 	if boss_health == 0:
-		Global.OnGameWon.emit()
+		Global.load_next_scene("game_won")
 
 func _update_ui():
 	var parent = boss_bar.get_parent_control()

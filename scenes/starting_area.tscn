@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://pey1pbm2g3n2"]
+[gd_scene load_steps=31 format=3 uid="uid://bb5i83fgmsyjk"]
 
 [ext_resource type="Script" path="res://scenes/starting_area.gd" id="1_8ojts"]
 [ext_resource type="PackedScene" uid="uid://dji1xlnnies6l" path="res://terrain/terrain.glb" id="1_ot43q"]
@@ -87,7 +87,7 @@ size = Vector3(0.4, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhyr6"]
 size = Vector3(0.4, 1, 1)
 
-[node name="starting-area" type="Node"]
+[node name="starting_area" type="Node3D"]
 script = ExtResource("1_8ojts")
 
 [node name="terrain" type="StaticBody3D" parent="."]

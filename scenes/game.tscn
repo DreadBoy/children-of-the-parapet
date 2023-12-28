@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjx5wdxhqeuo3"]
+[gd_scene load_steps=7 format=3 uid="uid://bjx5wdxhqeuo3"]
 
 [ext_resource type="Script" path="res://camera/camera.gd" id="1_fx8au"]
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_wvkd4"]
 [ext_resource type="PackedScene" uid="uid://dw53w3dfoykvq" path="res://character/character.tscn" id="2_w6bg1"]
-[ext_resource type="PackedScene" uid="uid://pey1pbm2g3n2" path="res://scenes/starting_area.tscn" id="4_oushv"]
+[ext_resource type="PackedScene" uid="uid://cft04ljsgdjq6" path="res://scenes/main_menu.tscn" id="5_l47gd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uupyu"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -21,7 +20,6 @@ ssao_enabled = true
 glow_enabled = true
 
 [node name="Main" type="Node"]
-script = ExtResource("1_wvkd4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pjy1w")
@@ -40,8 +38,7 @@ size = 5.0
 
 [node name="player" parent="." instance=ExtResource("2_w6bg1")]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.87651, -4.76837e-07, -0.976306)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -4)
+visible = false
 
-[node name="starting-area" parent="." instance=ExtResource("4_oushv")]
-
-[connection signal="OnAreaExit" from="starting-area" to="." method="on_starting_area_exit"]
+[node name="main_menu" parent="." instance=ExtResource("5_l47gd")]

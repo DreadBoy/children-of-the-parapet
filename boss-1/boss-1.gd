@@ -45,5 +45,5 @@ func _look_after_player(delta):
 	)
 
 func _on_player_hit(_body: Node3D):
-	Global.OnGameLoss.emit()
+	Global.load_next_scene("game_loss")
 	pass

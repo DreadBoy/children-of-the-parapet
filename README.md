@@ -18,25 +18,25 @@
 		- [x] move
 		- [x] club attack
 		- [ ] spin attack
-- [ ] Simple level
+- [x] Simple level
 	- [x] teach movement
-	- [ ] teach powers/pickups
+	- [ ] ~teach powers/pickups~
 	- [x] teach dash (can be done by destroying barrier / gate)
 	- [x] implement camera movement
-	- [ ] enter arena
-- [ ] Arena
-	- [ ] fight
-	- [ ] boss health bar
-	- [ ] game over screen in case of hit (one-hit death)
-	- [ ] game over screen in case of success
-	- [ ] end screen with link to survey
+	- [x] enter arena
+- [x] Arena
+	- [x] fight
+	- [x] boss health bar
+	- [x] game over screen in case of hit (one-hit death)
+	- [x] game over screen in case of success
+	- [x] end screen with link to survey
+- [x] main menu
+	- [x] with warning about survey at the end
 	
 - [ ] Improvements
 	- [ ] Screen shake in dash hit
 	- [ ] Sound effects
-- [ ] online survey
-- [ ] main menu
-	- [ ] with warning about survey at the end
+- [x] online survey
 
 
 ## Modeling, animating

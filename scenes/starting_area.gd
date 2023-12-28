@@ -1,6 +1,7 @@
 extends Node
 
-signal OnAreaExit()
+func _ready():
+	Global.player.visible = true
 
 func on_doorway_entered(_body: Node3D):
-	OnAreaExit.emit()
+	Global.load_next_scene("arena")
