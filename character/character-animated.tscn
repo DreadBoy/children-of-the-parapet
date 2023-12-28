@@ -100,6 +100,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("scene-area:monitoring")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("scene-area:monitorable")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_callt"]
 resource_name = "dash"
@@ -160,7 +184,7 @@ tracks/4/path = NodePath("attack-area:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.48),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -173,6 +197,30 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("scene-area:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("scene-area:monitorable")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -306,6 +354,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("scene-area:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("scene-area:monitorable")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_o5i8h"]
 resource_name = "walk"
@@ -406,7 +478,7 @@ radius = 0.26
 [node name="character" instance=ExtResource("1_w6244")]
 
 [node name="head_classic" parent="." index="0"]
-transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 2.23517e-08, 0.1, 0)
+transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 1.77949e-08, 0.093884, 0)
 
 [node name="foot_thin" parent="." index="1"]
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, 0.03, 0, 0.13)
@@ -415,13 +487,13 @@ transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, -0.03, 0, -0.13)
 
 [node name="foot_topShield" parent="." index="3"]
-transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 8.9407e-08, 0.4, 0)
+transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 7.11797e-08, 0.393884, 0)
 
 [node name="foot_double" parent="." index="4"]
-transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 2.98023e-08, 0.16, 0.18)
+transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 1.10583e-08, 0.141132, 0.18)
 
 [node name="foot_double2" parent="." index="5"]
-transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 2.98023e-08, 0.16, -0.18)
+transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 1.10583e-08, 0.141132, -0.18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 autoplay = "idle"
@@ -446,6 +518,8 @@ shape = SubResource("CylinderShape3D_n8it7")
 
 [node name="scene-area" type="Area3D" parent="." index="9"]
 collision_layer = 8
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="scene-area" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
