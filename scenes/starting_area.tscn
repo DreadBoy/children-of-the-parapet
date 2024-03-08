@@ -88,6 +88,7 @@ size = Vector3(0.4, 1, 1)
 size = Vector3(0.4, 1, 1)
 
 [node name="starting_area" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 script = ExtResource("1_8ojts")
 
 [node name="terrain" type="StaticBody3D" parent="."]

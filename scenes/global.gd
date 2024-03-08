@@ -13,3 +13,8 @@ func load_next_scene(next_scene: String):
 	
 	var new_scene = load("res://scenes/%s.tscn" % next_scene).instantiate()
 	root.add_child(new_scene)
+	
+	var starting_point = new_scene.get_node("starting_point")
+	if starting_point:
+		player.position = starting_point.position
+	

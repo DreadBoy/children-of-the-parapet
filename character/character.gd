@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
+@export var gravity = 6
 @export var speed = 3
 @export var dash_speed = 6
 
 @onready var state_machine = $Pivot/character/AnimationTree["parameters/playback"]
 
-var target_velocity = Vector3.ZERO
 
 func _ready():
 	state_machine.travel("idle")
@@ -16,29 +16,23 @@ func _physics_process(_delta):
 	var state = state_machine.get_current_node()
 
 	if state == "dash":
-		velocity = -$Pivot.global_transform.basis.z * dash_speed
+		var direction = _get_direction()
+		
+		var target_velocity = -$Pivot.global_transform.basis.z * dash_speed + direction / dash_speed
+
+		if direction != Vector3.ZERO:
+			$Pivot.look_at(position + target_velocity, Vector3.UP)
+		
+		velocity = target_velocity
 		move_and_slide()
 	elif state == "knockback":
 		velocity = $Pivot.global_transform.basis.z * speed / 2
 		move_and_slide()
 	elif state == "walk" or state == "idle":
-			
-		var direction = Vector3.ZERO
-
-		if Input.is_action_pressed("move_right"):
-			direction.z -= 1
-		if Input.is_action_pressed("move_left"):
-			direction.z += 1
-		if Input.is_action_pressed("move_up"):
-			direction.x -= 1
-		if Input.is_action_pressed("move_down"):
-			direction.x += 1
-			
-		if direction != Vector3.ZERO:
-			direction = direction.normalized()
+		var direction = _get_direction()
 		
-		target_velocity.x = direction.x * speed
-		target_velocity.z = direction.z * speed
+		var target_velocity = direction * speed
+		target_velocity.y = -gravity
 
 		velocity = target_velocity
 		
@@ -64,3 +58,19 @@ func _on_scene_hit(body: Node3D):
 		print("hit wall %s while dashing" % body)
 		state_machine.travel("knockback")
 
+func _get_direction():
+	var direction = Vector3.ZERO
+
+	if Input.is_action_pressed("move_right"):
+		direction.z -= 1
+	if Input.is_action_pressed("move_left"):
+		direction.z += 1
+	if Input.is_action_pressed("move_up"):
+		direction.x -= 1
+	if Input.is_action_pressed("move_down"):
+		direction.x += 1
+		
+	if direction != Vector3.ZERO:
+		direction = direction.normalized()
+	
+	return direction
