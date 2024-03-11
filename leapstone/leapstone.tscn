@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce4g7pim46k5x"]
+
+[ext_resource type="PackedScene" uid="uid://iob8yknxl0t6" path="res://leapstone/leapstone_animated.tscn" id="1_qcron"]
+[ext_resource type="Script" path="res://leapstone/leapstone.gd" id="1_vybm2"]
+[ext_resource type="PackedScene" uid="uid://c60x1opw1018e" path="res://helpers/enemy_helper.tscn" id="3_8fsns"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_53pde"]
+radius = 0.3
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_vybm2")
+
+[node name="leapstone_animated" parent="." instance=ExtResource("1_qcron")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.106798, 0.294, 0.104426)
+
+[node name="EnemyHelper" parent="." instance=ExtResource("3_8fsns")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.0346482)
+shape = SubResource("SphereShape3D_53pde")

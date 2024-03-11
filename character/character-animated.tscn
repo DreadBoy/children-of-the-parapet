@@ -478,7 +478,7 @@ radius = 0.26
 [node name="character" instance=ExtResource("1_w6244")]
 
 [node name="head_classic" parent="." index="0"]
-transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 1.77949e-08, 0.093884, 0)
+transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 7.8322e-09, 0.0805122, 0)
 
 [node name="foot_thin" parent="." index="1"]
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, 0.03, 0, 0.13)
@@ -487,13 +487,13 @@ transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.
 transform = Transform3D(0, 5.05762e-08, -0.3, -2.52881e-08, 0.3, 5.05762e-08, 0.3, 2.52881e-08, 0, -0.03, 0, -0.13)
 
 [node name="foot_topShield" parent="." index="3"]
-transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 7.11797e-08, 0.393884, 0)
+transform = Transform3D(0, 4.21468e-08, -0.7, -4.21468e-08, 0.25, 1.18011e-07, 0.5, 2.10734e-08, 0, 3.13289e-08, 0.380512, 0)
 
 [node name="foot_double" parent="." index="4"]
-transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 1.10583e-08, 0.141132, 0.18)
+transform = Transform3D(0, 0, -0.4, -0.2, 3.57628e-08, 0, 2.38419e-08, 0.3, 0, 2.32551e-08, 0.153409, 0.18)
 
 [node name="foot_double2" parent="." index="5"]
-transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 1.10583e-08, 0.141132, -0.18)
+transform = Transform3D(2.38419e-08, 0, -0.4, 0.2, 0, 4.76837e-08, 0, -0.3, 0, 2.32551e-08, 0.153409, -0.18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 autoplay = "idle"

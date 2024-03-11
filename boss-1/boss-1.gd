@@ -32,6 +32,7 @@ func _physics_process(delta):
 		state_machine.travel("attack")
 
 func _should_move_closer():
+	# TODO reuse enemy_helper script
 	var _range = player.global_position.distance_to(global_position)
 	var outOfRange = _range > attack_range
 	var angle = (-transform.basis.z).angle_to(player.global_position - global_position)

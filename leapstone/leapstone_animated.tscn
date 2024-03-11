@@ -1,0 +1,228 @@
+[gd_scene load_steps=20 format=3 uid="uid://iob8yknxl0t6"]
+
+[ext_resource type="PackedScene" uid="uid://dgsx2jd7o8gm6" path="res://leapstone/leapstone.glb" id="1_qg5e4"]
+
+[sub_resource type="Animation" id="Animation_hjpoh"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_wena2"]
+resource_name = "rotating"
+
+[sub_resource type="Animation" id="Animation_6v6ox"]
+resource_name = "jump"
+length = 0.5
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0995412, -0.294, 0), Vector3(0.0995412, -0.0788355, 0), Vector3(0.0995412, -0.294, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor_half:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, -0.0999999), Vector3(0.319542, 0.401164, -0.0999999), Vector3(0.319542, 0.186, -0.0999999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("meteor_half2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, 0.1), Vector3(0.319542, 0.401164, 0.1), Vector3(0.319542, 0.186, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("meteor2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.300459, -0.294, 0), Vector3(-0.62185, -0.294, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("meteor3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.100459, -0.294, 0), Vector3(-0.207312, -0.267771, 0), Vector3(-0.329429, -0.294, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uwnd4"]
+resource_name = "cooldown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.329429, -0.294, 0), Vector3(-0.100459, -0.294, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.62185, -0.294, 0), Vector3(-0.300459, -0.294, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oiayi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meteor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0995412, -0.294, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meteor_half:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, -0.0999999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("meteor_half2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("meteor2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.300459, -0.294, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("meteor3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.100459, -0.294, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8tbs"]
+_data = {
+"RESET": SubResource("Animation_oiayi"),
+"cooldown": SubResource("Animation_uwnd4"),
+"idle": SubResource("Animation_hjpoh"),
+"jumping": SubResource("Animation_6v6ox"),
+"rotating": SubResource("Animation_wena2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ecn3o"]
+animation = &"cooldown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xnn2m"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_an4gq"]
+animation = &"jumping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vc04h"]
+animation = &"rotating"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i7crg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_swm5m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7d2li"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xlgk0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_277dk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x026f"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qq4b2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xlau7"]
+states/Start/position = Vector2(204, 113)
+states/cooldown/node = SubResource("AnimationNodeAnimation_ecn3o")
+states/cooldown/position = Vector2(286, 266)
+states/idle/node = SubResource("AnimationNodeAnimation_xnn2m")
+states/idle/position = Vector2(355, 90)
+states/jumping/node = SubResource("AnimationNodeAnimation_an4gq")
+states/jumping/position = Vector2(476, 272)
+states/rotating/node = SubResource("AnimationNodeAnimation_vc04h")
+states/rotating/position = Vector2(556, 120)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i7crg"), "idle", "rotating", SubResource("AnimationNodeStateMachineTransition_swm5m"), "rotating", "jumping", SubResource("AnimationNodeStateMachineTransition_7d2li"), "idle", "jumping", SubResource("AnimationNodeStateMachineTransition_xlgk0"), "rotating", "idle", SubResource("AnimationNodeStateMachineTransition_277dk"), "jumping", "cooldown", SubResource("AnimationNodeStateMachineTransition_x026f"), "cooldown", "idle", SubResource("AnimationNodeStateMachineTransition_qq4b2")]
+
+[node name="leapstone_animated" instance=ExtResource("1_qg5e4")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_f8tbs")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="6"]
+tree_root = SubResource("AnimationNodeStateMachine_xlau7")
+anim_player = NodePath("../AnimationPlayer")
+active = true
