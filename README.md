@@ -74,13 +74,11 @@
 ## Modeling, animating
 
 Create model in Asset Forge, export with Godot preset.  
-Place it in a scene (doesn't matter which) and click "film" icon next to it.   
-This will create new inherited scene, name it `<name_of_model>_animated.tscn`. 
-Rename root of inherited scene to `<name_of_model>_animated`  
-In animated scene, add AnimationPlayer and create animations. Set one animation as "Autoplay on load".  
-Add AnimationTree, set Tree root as AnimationNodeStateMachine. Assign AnimationPlayer.
-Start animating. Create animation tree and set all connections.
-Toggle Active property.
+Create scene with same name and instantiate model inside it. Enable Editable children.  
+Add AnimationPlayer and create animations.  
+Add AnimationTree, set Tree root as AnimationNodeStateMachine. Assign AnimationPlayer.  
+Create animation tree and set all connections.  
+Toggle Active property.  
 
 ## Terrain, GridMap
 

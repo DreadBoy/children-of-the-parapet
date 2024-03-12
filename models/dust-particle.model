@@ -4,8 +4,12 @@
 
 [name:rockTrack;color:RGBA(0.981, 0.581, 0.449, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
 [name:rock;color:RGBA(0.910, 0.518, 0.388, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:stoneLight;color:RGBA(0.710, 0.701, 0.840, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:stoneDark;color:RGBA(0.403, 0.390, 0.594, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
 
 :models
 
-[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, -0.0019);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, 0.2000, 0.2000);group:Group_0;locked:False;hidden:False;materials:rock;]
-[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, -0.0019);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, -0.2000, 0.2000);group:Group_0;locked:False;hidden:False;materials:rock;]
+[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, -0.0019);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, -0.2000, 0.2000);group:;locked:False;hidden:False;materials:rock;]
+[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, -0.0019);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, 0.2000, 0.2000);group:;locked:False;hidden:False;materials:rock;]
+[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, 0.9981);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, -0.2000, 0.2000);group:;locked:False;hidden:False;materials:stoneDark;]
+[name:;collection:Space kit;type:rocks_smallA;position:(0.0004, 0.0000, 0.9981);rotation:(0.0000, 0.0000, 0.0000);scale:(0.2000, 0.2000, 0.2000);group:;locked:False;hidden:False;materials:stoneDark;]
