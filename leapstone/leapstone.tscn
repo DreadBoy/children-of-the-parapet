@@ -1,22 +1,280 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce4g7pim46k5x"]
+[gd_scene load_steps=25 format=3 uid="uid://iob8yknxl0t6"]
 
-[ext_resource type="PackedScene" uid="uid://iob8yknxl0t6" path="res://leapstone/leapstone_animated.tscn" id="1_qcron"]
 [ext_resource type="Script" path="res://leapstone/leapstone.gd" id="1_vybm2"]
+[ext_resource type="PackedScene" uid="uid://dgsx2jd7o8gm6" path="res://leapstone/leapstone.glb" id="2_7luqx"]
+[ext_resource type="PackedScene" uid="uid://b0ixirnkd62a8" path="res://helpers/health.tscn" id="3_4ynle"]
 [ext_resource type="PackedScene" uid="uid://c60x1opw1018e" path="res://helpers/enemy_helper.tscn" id="3_8fsns"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_53pde"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_qyay4"]
 radius = 0.3
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[sub_resource type="Animation" id="Animation_oiayi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leapstone/meteor_half:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, -0.0999999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leapstone/meteor_half2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("leapstone/meteor:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0995412, -0.294, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("leapstone/meteor2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.300459, -0.294, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("leapstone/meteor3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.100459, -0.294, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uwnd4"]
+resource_name = "cooldown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leapstone/meteor2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.76805, -0.294, -2.04391e-08), Vector3(-0.300459, -0.294, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leapstone/meteor3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.426563, -0.294, -1.42545e-08), Vector3(-0.100459, -0.294, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hjpoh"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_6v6ox"]
+resource_name = "jump"
+length = 0.5
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leapstone/meteor_half:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.42, 0.46, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, -0.0999999), Vector3(0.319542, 0.434844, -0.0999999), Vector3(0.319542, 0.186, -0.0999999), Vector3(0.319542, 0.257888, -0.0999999), Vector3(0.319542, 0.186, -0.0999999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leapstone/meteor_half2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.42, 0.46, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.319542, 0.186, 0.1), Vector3(0.319542, 0.434844, 0.1), Vector3(0.319542, 0.186, 0.1), Vector3(0.319542, 0.257888, 0.1), Vector3(0.319542, 0.186, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("leapstone/meteor:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.42, 0.46, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0995412, -0.294, 0), Vector3(0.0995412, -0.0451559, 0), Vector3(0.0995412, -0.294, 0), Vector3(0.0995412, -0.222112, 0), Vector3(0.0995412, -0.294, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("leapstone/meteor2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.300459, -0.294, 0), Vector3(-0.76805, -0.294, -2.04391e-08)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("leapstone/meteor3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.100459, -0.294, 0), Vector3(-0.296121, -0.237822, -8.55268e-09), Vector3(-0.426563, -0.294, -1.42545e-08)]
+}
+
+[sub_resource type="Animation" id="Animation_wena2"]
+resource_name = "rotating"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8tbs"]
+_data = {
+"RESET": SubResource("Animation_oiayi"),
+"cooldown": SubResource("Animation_uwnd4"),
+"idle": SubResource("Animation_hjpoh"),
+"jumping": SubResource("Animation_6v6ox"),
+"rotating": SubResource("Animation_wena2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ecn3o"]
+animation = &"cooldown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xnn2m"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_an4gq"]
+animation = &"jumping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vc04h"]
+animation = &"rotating"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i7crg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_swm5m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7d2li"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xlgk0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_277dk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x026f"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qq4b2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xlau7"]
+states/Start/position = Vector2(204, 113)
+states/cooldown/node = SubResource("AnimationNodeAnimation_ecn3o")
+states/cooldown/position = Vector2(286, 266)
+states/idle/node = SubResource("AnimationNodeAnimation_xnn2m")
+states/idle/position = Vector2(358, 90)
+states/jumping/node = SubResource("AnimationNodeAnimation_an4gq")
+states/jumping/position = Vector2(511, 266)
+states/rotating/node = SubResource("AnimationNodeAnimation_vc04h")
+states/rotating/position = Vector2(596, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i7crg"), "idle", "rotating", SubResource("AnimationNodeStateMachineTransition_swm5m"), "rotating", "jumping", SubResource("AnimationNodeStateMachineTransition_7d2li"), "idle", "jumping", SubResource("AnimationNodeStateMachineTransition_xlgk0"), "rotating", "idle", SubResource("AnimationNodeStateMachineTransition_277dk"), "jumping", "cooldown", SubResource("AnimationNodeStateMachineTransition_x026f"), "cooldown", "idle", SubResource("AnimationNodeStateMachineTransition_qq4b2")]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f11fl"]
+radius = 0.35
+
+[node name="leapstone" type="CharacterBody3D"]
 collision_layer = 4
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_vybm2")
 
-[node name="leapstone_animated" parent="." instance=ExtResource("1_qcron")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.106798, 0.294, 0.104426)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
+shape = SubResource("SphereShape3D_qyay4")
+
+[node name="leapstone" parent="." instance=ExtResource("2_7luqx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.294, 0)
+
+[node name="meteor_half" parent="leapstone" index="0"]
+transform = Transform3D(0.00716816, 0.0958655, 0.135785, -0.0767874, 0.0296609, -0.06275, -0.0287347, -0.0553479, 0.201559, 0.319542, 0.186, -0.0999999)
+
+[node name="meteor_half2" parent="leapstone" index="1"]
+transform = Transform3D(0.00716818, 0.0958654, -0.135785, -0.0767877, 0.0296609, 0.0627499, 0.0287348, 0.0553478, 0.201559, 0.319542, 0.186, 0.1)
+
+[node name="meteor" parent="leapstone" index="2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.0995412, -0.294, 0)
+
+[node name="meteor2" parent="leapstone" index="3"]
+transform = Transform3D(0.336, 0, 0, 0, 0.336, 0, 0, 0, 0.336, -0.300459, -0.294, 0)
+
+[node name="meteor3" parent="leapstone" index="4"]
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, -0.100459, -0.294, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f8tbs")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_xlau7")
+anim_player = NodePath("../AnimationPlayer")
+active = true
 
 [node name="EnemyHelper" parent="." instance=ExtResource("3_8fsns")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.0346482)
-shape = SubResource("SphereShape3D_53pde")
+[node name="health" parent="." instance=ExtResource("3_4ynle")]
+health = 1
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_f11fl")
+
+[connection signal="on_dead" from="health" to="." method="_on_dead"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+
+[editable path="leapstone"]

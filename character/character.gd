@@ -50,7 +50,9 @@ func _physics_process(_delta):
 func _on_attack(body: Node3D):
 	if state_machine.get_current_node() == "dash":
 		print("attacked %s while dashing" % body)
-		Global.OnBossDamage.emit()
+		var health = Health.find_in_node(body)
+		if health:
+			health.receive_damage(1)
 		state_machine.travel("knockback")
 
 func _on_scene_hit(body: Node3D):
