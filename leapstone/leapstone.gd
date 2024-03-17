@@ -5,10 +5,6 @@ extends CharacterBody3D
 @onready var enemy_helper: EnemyHelper = $EnemyHelper
 @onready var state_machine = $AnimationTree["parameters/playback"]
 
-func _ready():
-	pass
-
-
 func _physics_process(delta):
 	var state = state_machine.get_current_node()
 	
@@ -27,13 +23,14 @@ func _physics_process(delta):
 		var collision = move_and_collide(direction * delta)
 		if collision:
 			# There's currently a bug where you can't travel from "jumping" to "cooldown" immediately.
-			# So leapstone will try to keep jumping until "cooldown" is reached naturally because "jumping" animation is at end.
+			# So leapstone will try to keep jumping until "cooldown" is reached naturally 
+			# after "jumping" animation.
 			state_machine.travel("cooldown")
 
 func _on_body_entered(body: Node3D):
 	var health = Health.find_in_node(body)
 	if health:
-		health.receive_damage(1)
+		health.deal_damage(1)
 
 
 func _on_dead():

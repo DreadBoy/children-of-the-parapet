@@ -71,9 +71,22 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(-0.100459, -0.294, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Area3D:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uwnd4"]
 resource_name = "cooldown"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,7 +94,7 @@ tracks/0/path = NodePath("leapstone/meteor2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.76805, -0.294, -2.04391e-08), Vector3(-0.300459, -0.294, 0)]
@@ -93,7 +106,7 @@ tracks/1/path = NodePath("leapstone/meteor3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.426563, -0.294, -1.42545e-08), Vector3(-0.100459, -0.294, 0)]
@@ -180,6 +193,18 @@ tracks/5/keys = {
 "method": &"restart"
 }]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Area3D:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_wena2"]
 resource_name = "rotating"
@@ -256,6 +281,8 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="leapstone" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 7
+floor_stop_on_slope = false
+floor_max_angle = 0.261799
 script = ExtResource("1_vybm2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -291,6 +318,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 
 [node name="EnemyHelper" parent="." instance=ExtResource("3_8fsns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
 
 [node name="health" parent="." instance=ExtResource("3_4ynle")]
 health = 1
@@ -299,6 +327,7 @@ health = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
 collision_layer = 0
 collision_mask = 2
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_f11fl")

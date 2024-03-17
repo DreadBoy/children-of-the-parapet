@@ -4,3 +4,8 @@
 
 [node name="EnemyHelper" type="Node3D"]
 script = ExtResource("1_50agm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.2
+path_max_distance = 1.01

@@ -26,3 +26,5 @@ shape = SubResource("CapsuleShape3D_twyva")
 
 [node name="health" parent="." instance=ExtResource("3_37yhx")]
 health = 10
+
+[connection signal="on_damage_received" from="health" to="." method="_got_hit"]

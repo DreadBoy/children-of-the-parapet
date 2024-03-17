@@ -5,9 +5,11 @@ class_name Health
 @export var health: int
 
 signal on_dead()
+signal on_damage_received(damage: int)
 
-func receive_damage(damage: int):
+func deal_damage(damage: int):
 	health -= damage
+	on_damage_received.emit(damage)
 	if not is_alive():
 		on_dead.emit()
 

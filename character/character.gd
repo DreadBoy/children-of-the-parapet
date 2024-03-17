@@ -52,13 +52,16 @@ func _on_attack(body: Node3D):
 		print("attacked %s while dashing" % body)
 		var health = Health.find_in_node(body)
 		if health:
-			health.receive_damage(1)
+			health.deal_damage(1)
 		state_machine.travel("knockback")
 
 func _on_scene_hit(body: Node3D):
 	if state_machine.get_current_node() == "dash":
 		print("hit wall %s while dashing" % body)
 		state_machine.travel("knockback")
+
+func _got_hit(damage: int):
+	print("got hit for %s" % damage)
 
 func _get_direction():
 	var direction = Vector3.ZERO
