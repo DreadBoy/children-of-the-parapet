@@ -20,7 +20,6 @@ func _update_actor_target():
 	if synced:
 		navigation_agent.set_target_position(player.global_position)
 
-	
 func _physics_process(_delta):
 	_update_actor_target()
 	

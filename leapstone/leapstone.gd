@@ -30,8 +30,8 @@ func _physics_process(delta):
 func _on_body_entered(body: Node3D):
 	var health = Health.find_in_node(body)
 	if health:
-		health.deal_damage(1)
+		health.deal_damage(self, 1)
 
 
-func _on_dead():
+func _on_dead(_source: Node3D):
 	queue_free()

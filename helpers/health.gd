@@ -1,17 +1,16 @@
 extends Node3D
 class_name Health
 
-
 @export var health: int
 
-signal on_dead()
-signal on_damage_received(damage: int)
+signal on_dead(source: Node3D)
+signal on_damage_received(source: Node3D, damage: int)
 
-func deal_damage(damage: int):
+func deal_damage(source: Node3D, damage: int):
 	health -= damage
-	on_damage_received.emit(damage)
+	on_damage_received.emit(source, damage)
 	if not is_alive():
-		on_dead.emit()
+		on_dead.emit(source)
 
 func is_alive():
 	return health > 0

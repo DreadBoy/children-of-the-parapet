@@ -7,19 +7,22 @@
 - [ ] figure out how to make sound effects
 - [ ] screen shake on dash hit
 - [ ] simple enemy
-	- [ ] leapstone
+	- [x] leapstone
 		- leaping ~frog~ stone
 		- moves by leaping, will leap onto player to attack
+	- [x] pathfinding towards player
+		- [ ] will start only when in aggro range
+		- [ ] will stop if out of aggro range
 	- [ ] destroyable items?
 		- piles of stones -> leapstone emerges
 - [ ] boss
 	- something connected with jumping/leaping
 	- reward is jump ability
 - [ ] Green 1st level
-	- [ ] sketch layout, mark enemies
-	- [ ] recolor Mars assets to green/gray
-	- [ ] create vegetation, rocks
-	- [ ] create asset kit in Godot, don't forget colliders
+	- [x] sketch layout, mark enemies
+	- [x] recolor Mars assets to green/gray
+	- [x] create vegetation, rocks
+	- [x] create asset kit in Godot, don't forget colliders
 
 ### Phase 3
 

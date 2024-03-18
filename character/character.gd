@@ -52,7 +52,7 @@ func _on_attack(body: Node3D):
 		print("attacked %s while dashing" % body)
 		var health = Health.find_in_node(body)
 		if health:
-			health.deal_damage(1)
+			health.deal_damage(self, 1)
 		state_machine.travel("knockback")
 
 func _on_scene_hit(body: Node3D):
@@ -60,8 +60,14 @@ func _on_scene_hit(body: Node3D):
 		print("hit wall %s while dashing" % body)
 		state_machine.travel("knockback")
 
-func _got_hit(damage: int):
-	print("got hit for %s" % damage)
+func _got_hit(source: Node3D, damage: int):
+	if not state_machine.get_current_node() == "dash":
+		print("got hit for %s" % damage)
+		$Pivot.look_at(source.global_position, Vector3.UP)
+		# TODO Create new state "was damaged" that is similar to knockback
+		# but also changes model (make it red and squished for example)
+		# doesn't change rotation but still moves away from source
+		state_machine.travel("knockback")
 
 func _get_direction():
 	var direction = Vector3.ZERO

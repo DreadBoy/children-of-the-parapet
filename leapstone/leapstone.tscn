@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://iob8yknxl0t6"]
+[gd_scene load_steps=27 format=3 uid="uid://iob8yknxl0t6"]
 
 [ext_resource type="Script" path="res://leapstone/leapstone.gd" id="1_vybm2"]
 [ext_resource type="PackedScene" uid="uid://dgsx2jd7o8gm6" path="res://leapstone/leapstone.glb" id="2_7luqx"]
@@ -273,11 +273,6 @@ gravity = Vector3(0, -6, 0)
 initial_velocity_min = 1.5
 initial_velocity_max = 2.5
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2ukcv"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_juhjo"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
-
 [node name="leapstone" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 7
@@ -341,16 +336,6 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_saqq1")
 draw_pass_1 = ExtResource("5_sggfs")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-process_mode = 4
-visible = false
-mesh = SubResource("PlaneMesh_2ukcv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_juhjo")
 
 [connection signal="on_dead" from="health" to="." method="_on_dead"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
