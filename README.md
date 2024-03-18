@@ -5,7 +5,8 @@
 ### Phase 2
 
 - [ ] figure out how to make sound effects
-- [ ] screen shake on dash hit
+- [ ] screen shake on damage taken
+- [ ] freeze frame on damage dealt
 - [ ] simple enemy
 	- [x] leapstone
 		- leaping ~frog~ stone
@@ -13,6 +14,7 @@
 	- [x] pathfinding towards player
 		- [x] will start only when in aggro range
 		- [x] will stop if out of aggro range
+	- [ ] camera will zoom out to show all/most enemies that are aggroed
 	- [ ] destroyable items?
 		- piles of stones -> leapstone emerges
 - [ ] boss
@@ -23,9 +25,23 @@
 	- [x] recolor Mars assets to green/gray
 	- [x] create vegetation, rocks
 	- [x] create asset kit in Godot, don't forget colliders
+	- [ ] iterate on level, it's too narrow to avoid enemies completely
+	- [ ] add 2nd (semi-hidden) path that leads to pocket level and ambush
+		- [ ] think of reward...
+			- extra life? - no HP is implemented yet...
+			- just chill music and chill animation? - need to do animation :(
+			- extra emoji? - need to do animation, too. But it will also tie into future kill/action streaks
 
 ### Phase 3
 
+- [ ] Hit points
+	- low number of hit points
+	- maybe each split in half, will recover if nothing hits you again in short window of time?
+	- "extra point" at 0 HP
+- [ ] Kill streak / action streak
+	- each kill and combo will increase streak
+	- no gameplay effect, just louder percussion (music), more zoomed in camera and a bit longer freeze frame
+	- lost if damage taken or a bit longer without any action
 - [ ] simple enemies
 	- [ ] woodshield - SCRAPED, it slows down gameplay. Next monster should have ground smash ability.
 		- wooden stump with a shield
@@ -34,7 +50,7 @@
 		- slow-ish shield-off, then it can start walking/turning again
 		- player will need to bait shield and kite around
 	- [ ] destroyable items?
-		- piles of stones -> leapstone emerges
+		- tree stump -> woodshield emerges
 
 ### Phase 1
 
