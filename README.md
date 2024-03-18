@@ -11,8 +11,8 @@
 		- leaping ~frog~ stone
 		- moves by leaping, will leap onto player to attack
 	- [x] pathfinding towards player
-		- [ ] will start only when in aggro range
-		- [ ] will stop if out of aggro range
+		- [x] will start only when in aggro range
+		- [x] will stop if out of aggro range
 	- [ ] destroyable items?
 		- piles of stones -> leapstone emerges
 - [ ] boss
@@ -27,7 +27,7 @@
 ### Phase 3
 
 - [ ] simple enemies
-	- [ ] woodshield
+	- [ ] woodshield - SCRAPED, it slows down gameplay. Next monster should have ground smash ability.
 		- wooden stump with a shield
 		- fast shield-on animation
 		- cooldown before starting to shield-off

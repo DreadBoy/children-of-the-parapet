@@ -14,7 +14,7 @@ func _physics_process(delta):
 		enemy_helper.turn_after_player(delta * 10)
 		if not enemy_helper.is_facing_away_more_than(5):
 			state_machine.travel("idle")
-	elif state == "idle":
+	elif state == "idle" and enemy_helper.has_target():
 		enemy_helper.look_at_player()
 		state_machine.travel("jumping")
 	elif state == "jumping":

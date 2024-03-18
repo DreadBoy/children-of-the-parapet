@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://iob8yknxl0t6"]
+[gd_scene load_steps=28 format=3 uid="uid://iob8yknxl0t6"]
 
 [ext_resource type="Script" path="res://leapstone/leapstone.gd" id="1_vybm2"]
 [ext_resource type="PackedScene" uid="uid://dgsx2jd7o8gm6" path="res://leapstone/leapstone.glb" id="2_7luqx"]
@@ -261,6 +261,10 @@ states/rotating/node = SubResource("AnimationNodeAnimation_vc04h")
 states/rotating/position = Vector2(596, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i7crg"), "idle", "rotating", SubResource("AnimationNodeStateMachineTransition_swm5m"), "rotating", "jumping", SubResource("AnimationNodeStateMachineTransition_7d2li"), "idle", "jumping", SubResource("AnimationNodeStateMachineTransition_xlgk0"), "rotating", "idle", SubResource("AnimationNodeStateMachineTransition_277dk"), "jumping", "cooldown", SubResource("AnimationNodeStateMachineTransition_x026f"), "cooldown", "idle", SubResource("AnimationNodeStateMachineTransition_qq4b2")]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8jmc0"]
+height = 0.2
+radius = 8.0
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_f11fl"]
 radius = 0.35
 
@@ -315,6 +319,9 @@ active = true
 [node name="EnemyHelper" parent="." instance=ExtResource("3_8fsns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
 
+[node name="CollisionShape3D" parent="EnemyHelper/Area3D" index="0"]
+shape = SubResource("CylinderShape3D_8jmc0")
+
 [node name="health" parent="." instance=ExtResource("3_4ynle")]
 health = 1
 
@@ -341,3 +348,4 @@ draw_pass_1 = ExtResource("5_sggfs")
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
 
 [editable path="leapstone"]
+[editable path="EnemyHelper"]
