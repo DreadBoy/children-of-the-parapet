@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c60x1opw1018e"]
+[gd_scene load_steps=4 format=3 uid="uid://c60x1opw1018e"]
 
 [ext_resource type="Script" path="res://helpers/enemy_helper.gd" id="1_50agm"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yi4d7"]
 height = 0.2
 radius = 10.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sqbvn"]
+height = 0.2
+radius = 15.0
 
 [node name="EnemyHelper" type="Node3D"]
 script = ExtResource("1_50agm")
@@ -14,13 +18,20 @@ path_desired_distance = 0.5
 target_desired_distance = 0.2
 path_max_distance = 1.01
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="EnterAggro" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnterAggro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("CylinderShape3D_yi4d7")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="LeaveAggro" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeaveAggro"]
+shape = SubResource("CylinderShape3D_sqbvn")
+
+[connection signal="body_entered" from="EnterAggro" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="LeaveAggro" to="." method="_on_area_3d_body_exited"]
