@@ -54,11 +54,13 @@ func _on_attack(body: Node3D):
 		var health = Health.find_in_node(body)
 		if health:
 			health.deal_damage(self, 1)
+		Global.frame_freeze(0.3, 0.2)
 		state_machine.travel("knockback")
 
 func _on_scene_hit(body: Node3D):
 	if state_machine.get_current_node() == "dash":
 		print("hit wall %s while dashing" % body)
+		Global.frame_freeze(0.3, 0.2)
 		state_machine.travel("knockback")
 
 func _got_hit(source: Node3D, damage: int):

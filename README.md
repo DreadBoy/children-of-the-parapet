@@ -6,7 +6,7 @@
 
 - [ ] figure out how to make sound effects
 - [ ] screen shake on damage taken
-- [ ] freeze frame on damage dealt
+- [x] freeze frame on damage dealt
 - [ ] simple enemy
 	- [x] leapstone
 		- leaping ~frog~ stone

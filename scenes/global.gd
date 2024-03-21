@@ -18,3 +18,8 @@ func load_next_scene(next_scene: String):
 	if starting_point:
 		player.position = starting_point.position
 	
+
+func frame_freeze(time_scale: float, duration: float):
+	Engine.time_scale = time_scale
+	await get_tree().create_timer(duration * time_scale).timeout
+	Engine.time_scale = 1
