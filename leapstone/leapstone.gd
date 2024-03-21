@@ -31,6 +31,7 @@ func _on_body_entered(body: Node3D):
 	var health = Health.find_in_node(body)
 	if health:
 		health.deal_damage(self, 1)
+		Global.shake_camera(.2)
 
 
 func _on_dead(_source: Node3D):

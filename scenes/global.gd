@@ -6,6 +6,7 @@ extends Node
 var currentScene = "main_menu"
 
 signal OnBossDamage()
+signal on_camera_shake(strength: float)
 
 func load_next_scene(next_scene: String):
 	root.get_node(currentScene).queue_free()
@@ -23,3 +24,7 @@ func frame_freeze(time_scale: float, duration: float):
 	Engine.time_scale = time_scale
 	await get_tree().create_timer(duration * time_scale).timeout
 	Engine.time_scale = 1
+
+func shake_camera(strength: float):
+	on_camera_shake.emit(strength)
+	

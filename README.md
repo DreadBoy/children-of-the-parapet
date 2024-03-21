@@ -5,7 +5,7 @@
 ### Phase 2
 
 - [ ] figure out how to make sound effects
-- [ ] screen shake on damage taken
+- [x] screen shake on damage taken
 - [x] freeze frame on damage dealt
 - [ ] simple enemy
 	- [x] leapstone
