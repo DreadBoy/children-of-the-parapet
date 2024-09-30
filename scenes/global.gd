@@ -8,6 +8,9 @@ var currentScene = "main_menu"
 signal OnBossDamage()
 signal on_camera_shake(strength: float)
 
+signal on_enemy_aggro(enemy: EnemyHelper)
+signal on_enemy_deaggro(enemy: EnemyHelper)
+
 func load_next_scene(next_scene: String):
 	root.get_node(currentScene).queue_free()
 	currentScene = next_scene

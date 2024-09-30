@@ -60,11 +60,13 @@ func look_at_player():
 	)
 
 func _on_area_3d_body_entered(body: Node3D):
-	print("area entered %s" % body)
+	print("EnterAggro entered by %s" % body)
 	if body is Player:
+		Global.on_enemy_aggro.emit(parent)
 		_update_actor_target(body)
 
 func _on_area_3d_body_exited(body):
-	print("area exited %s" % body)
+	print("LeaveAggro exited by %s" % body)
 	if body is Player:
+		Global.on_enemy_deaggro.emit(parent)
 		_update_actor_target(null)
