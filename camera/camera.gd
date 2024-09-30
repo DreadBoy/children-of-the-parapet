@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	position = player.position
-	_find_correct_zoom()
+	_find_correct_zoom(delta)
 	
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength, 0, 5 * delta)
@@ -32,14 +32,18 @@ func _add_enemy(enemy: Node3D):
 	if not targets.has(enemy):
 		targets.append(enemy)
 	print(targets)
-	_find_correct_zoom()
 
 func _remove_enemy(enemy: Node3D):
 	targets = targets.filter(func(t): return t != enemy)
 	print(targets)
-	_find_correct_zoom()
 
-func _find_correct_zoom():
+func _find_correct_zoom(delta):
+	
+	var zoom_speed: float = 5.0  # Base zoom speed (adjustable)
+	var min_zoom_speed: float = 5.0  # Minimum zoom speed
+	var max_zoom_speed: float = 20.0  # Maximum zoom speed (faster when far away)
+	var smoothing_factor: float = 0.5  # Controls how smooth the lerp is
+	
 	var aabb = AABB(player.global_transform.origin, Vector3.ZERO)
 	for node in targets:
 		if node is Node3D:
@@ -49,7 +53,10 @@ func _find_correct_zoom():
 	var distance_to_fit = max(aabb.size.length(), camera_distance)
 
 	var current_offset = camera.transform.origin.distance_to(Vector3.ZERO)
-	var new_offset = distance_to_fit - current_offset
-	camera.translate_object_local(Vector3(0, 0, new_offset))
-			
+	var distance_difference = distance_to_fit - current_offset
+	
+	var dynamic_zoom_speed = clamp(zoom_speed * abs(distance_difference), min_zoom_speed, max_zoom_speed)
+	var new_offset = lerp(current_offset, distance_to_fit, smoothing_factor * dynamic_zoom_speed * delta)
+	camera.translate_object_local(Vector3(0, 0, new_offset - current_offset))
+	
 	# DebugDraw3D.draw_aabb(aabb, Color.BROWN, 6)

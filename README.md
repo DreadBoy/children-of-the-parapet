@@ -14,7 +14,7 @@
 	- [x] pathfinding towards player
 		- [x] will start only when in aggro range
 		- [x] will stop if out of aggro range
-	- [ ] camera will zoom out to show all/most enemies that are aggroed
+	- [x] camera will zoom out to show all/most enemies that are aggroed
 	- [ ] destroyable items?
 		- piles of stones -> leapstone emerges
 - [ ] boss
